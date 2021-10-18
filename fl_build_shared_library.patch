@@ -1,0 +1,33 @@
+diff --git a/flashlight/app/asr/CMakeLists.txt b/flashlight/app/asr/CMakeLists.txt
+index 4d298073..84dc3610 100644
+--- a/flashlight/app/asr/CMakeLists.txt
++++ b/flashlight/app/asr/CMakeLists.txt
+@@ -4,6 +4,7 @@ cmake_dependent_option(FL_BUILD_APP_ASR_TOOLS "Build ASR App tools" ON "FL_BUILD
+ 
+ add_library(
+   flashlight-app-asr
++  SHARED
+   ""
+   )
+ 
+@@ -61,7 +62,6 @@ set_executable_output_directory(fl_asr_decode "${FL_BUILD_BINARY_OUTPUT_DIR}/asr
+ install(TARGETS fl_asr_train RUNTIME DESTINATION ${FL_INSTALL_BIN_DIR})
+ install(TARGETS fl_asr_test RUNTIME DESTINATION ${FL_INSTALL_BIN_DIR})
+ install(TARGETS fl_asr_decode RUNTIME DESTINATION ${FL_INSTALL_BIN_DIR})
+-
+ # ----------------------------- Tutorial Binaries -----------------------------
+ 
+ add_executable(fl_asr_tutorial_inference_ctc ${CMAKE_CURRENT_LIST_DIR}/tutorial/InferenceCTC.cpp)
+diff --git a/flashlight/lib/CMakeLists.txt b/flashlight/lib/CMakeLists.txt
+index cc719779..b8c2145d 100644
+--- a/flashlight/lib/CMakeLists.txt
++++ b/flashlight/lib/CMakeLists.txt
+@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.10)
+ 
+ add_library(
+   fl-libraries
++  SHARED
+   ""
+   )
+ set(INSTALLABLE_TARGETS ${INSTALLABLE_TARGETS} fl-libraries)
+
